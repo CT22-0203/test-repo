@@ -1,0 +1,33 @@
+create table if not exists patient (
+patient_id int auto_increment primary key 
+, first_name varchar(50) not null
+, last_name varchar(50) not null
+, date_of_birth date not null
+, student_id varchar(20) not null unique
+, grade int check(grade between 1 and 12)
+, email varchar(100) unique
+, emergency_phone varchar(20) not null
+);
+
+create table if not exists staff ( 
+staff_id int auto_increment primary key 
+,first_name varchar(50) not null
+, last_name varchar(50) not null 
+, role varchar(30) not null
+, license_number varchar(30) unique 
+, phone varchar(20) not null 
+, email varchar(100) not null unique
+, hire_date date not null 
+);
+
+create table if not exists visit ( 
+visit_id int auto_increment primary key
+, patient_id int not null
+, staff_id int not null
+, visit_date datetime not null default current_timestamp
+, reason text not null
+, diagnosis text
+, follow_up_needed tinyint(1) default 0
+, height_cm decimal(5,2)
+, weight_kg decimal(5,2) 
+);
