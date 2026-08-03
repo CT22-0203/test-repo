@@ -95,5 +95,53 @@ insert into medication
 (medication_name,description,unit,stock_quantity,reorder_level)
 values ('paracetamol','anti lagnat','500mg','55','220');
 
-insert into visit 
-(
+insert into visit
+(patient_id, staff_id, visit_date, reason, diagnosis, follow_up_needed, height_cm, weight_kg)
+values
+(1, 1, '2026-07-10 08:30:00', 'fever', 'flu', 1, 170.50, 65.00);
+
+insert into visit
+(patient_id, staff_id, visit_date, reason, diagnosis, follow_up_needed, height_cm, weight_kg)
+values
+(2, 2, '2026-07-12 09:45:00', 'tooth pain', 'dental infection', 0, 165.00, 58.50);
+
+insert into visit
+(patient_id, staff_id, visit_date, reason, diagnosis, follow_up_needed, height_cm, weight_kg)
+values
+(4, 1, '2026-07-15 01:20:00', 'stomach ache', 'gastritis', 1, 172.00, 68.00);
+
+insert into visit
+(patient_id, staff_id, visit_date, reason, diagnosis, follow_up_needed, height_cm, weight_kg)
+values
+(1, 2, '2026-07-18 11:15:00', 'headache', 'migraine', 0, 170.50, 65.00);
+
+insert into visit
+(patient_id, staff_id, visit_date, reason, diagnosis, follow_up_needed, height_cm, weight_kg)
+values
+(2, 1, '2026-07-21 02:30:00', 'back pain', 'muscle strain', 1, 165.00, 59.00);
+
+insert into prescription
+(visit_id, medication_id, dosage, frequency, duration_days, instructions)
+values
+(1, 4, '500mg', 'every 6 hours', 5, 'take after meals');
+
+insert into prescription
+(visit_id, medication_id, dosage, frequency, duration_days, instructions)
+values
+(2, 2, '500mg', 'three times a day', 7, 'finish all medication');
+
+insert into prescription
+(visit_id, medication_id, dosage, frequency, duration_days, instructions)
+values
+(7, 3, '10mg', 'once a day', 5, 'take before bedtime');
+
+insert into prescription
+(visit_id, medication_id, dosage, frequency, duration_days, instructions)
+values
+(8, 1, '400mg', 'every 8 hours', 3, 'take after meals');
+
+insert into prescription
+(visit_id, medication_id, dosage, frequency, duration_days, instructions)
+values
+(9, 1, '400mg', 'every 8 hours', 5, 'drink plenty of water');
+
