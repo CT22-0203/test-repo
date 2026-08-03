@@ -145,3 +145,14 @@ insert into prescription
 values
 (9, 1, '400mg', 'every 8 hours', 5, 'drink plenty of water');
 
+alter table visit
+add foreign key (patient_id) references patient(patient_id);
+
+alter table visit
+add foreign key (staff_id) references staff(staff_id);
+
+alter table prescription
+add foreign key (visit_id) references visit(visit_id);
+
+alter table prescription
+add foreign key (medication_id) references medication(medication_id);
