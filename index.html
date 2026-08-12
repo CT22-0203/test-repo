@@ -1,101 +1,176 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <title>Barangay Borrower Slip</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body align="center">
-    <table width="100%">
-    <tr>
-        <td align="left">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5N7Dhuno2gY0PWCUQZNsOakZBuBtypi_SRkN9MfItfccgMxlp0cBYw8e6&s=10" alt="Barangay Logo" width="200" height="200">
-        </td>
+<body>
 
-        <td align="center">
-            <h2>Barangay Pasong Camachile II</h1>
-            <h4>General Trias, Cavite 4107, Philippines</h3>
-            <h3>BORROWER SLIP</h2>
-        </td>
+    <div class="page-header">
 
-        <td align="right">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtud9weCv3SJwA4GEmL2ftpLI4hto4o33QVWsSFpuKWKFNKXwMPyrJQ2Q&s=10" alt="Barangay SK LOGO" width="200" height="200">
-        </td>
-    </tr>
-</table>
-
-<hr>
-
-    <form method="POST" action="home.html">
-
-        <div>
-            <br>
-            
-            <label for="name">Name: </label>
-            <input type="text" id="name" name="name" required>
+        <div class="header-logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuZgnKmlSs16898Vpj4i2hPZrWVWR6HTFqj0si5EmTug&s=10"
+                alt="City Logo">
         </div>
 
-        <br>
-
-        <div>
-            <label for="address">Address: </label>
-            <input type="text" id="address" name="address" required>
+        <div class="header-text">
+            <h1>Barangay Pasong Camachile II</h1>
+            <p>General Trias, Cavite 4107, Philippines</p>
+            <h2>BORROWER SLIP</h2>
         </div>
 
-        <br>
-
-        <div>
-            <label for="chairs">No. of Chairs: </label>
-            <input type="number" id="chairs" name="chairs" min="0" required>
+        <div class="header-logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZuU4BRcMTH_HZ2bykXINJzdM9kAINczMgkMHQpXkjkw&s=10"
+                alt="Barangay SK Logo">
         </div>
 
-        <br>
+    </div>
 
-        <div>
-            <label for="tables">No. of Tables: </label>
-            <input type="number" id="tables" name="tables" min="0">
+    <hr>
+
+    <form class="form-index" method="POST" action="home.html" enctype="multipart/form-data">
+
+        <div class="form-section">
+
+            <h3>Borrower Information</h3>
+
+            <div class="form-grid">
+
+                <label for="f-name">
+                    Name: <span>*</span>
+                </label>
+
+                <input type="text" id="f-name" name="name" required>
+
+                <label for="address">
+                    Address: <span>*</span>
+                </label>
+
+                <input type="text" id="address" name="address" required>
+
+            </div>
+
         </div>
 
-        <br>
+        <div class="form-section">
 
-        <div>
-            <label for="tents">No. of Tents: </label>
-            <input type="number" id="tents" name="tents" min="0">
+            <h3>Items to Borrow</h3>
+
+            <div class="items-grid">
+
+                <div class="item-field">
+
+                    <label for="chairs">
+                        No. of Chairs:
+                    </label>
+
+                    <input type="number" id="chairs" name="chairs" min="0" required>
+
+                </div>
+
+                <div class="item-field">
+
+                    <label for="tables">
+                        No. of Tables:
+                    </label>
+
+                    <input type="number" id="tables" name="tables" min="0">
+
+                </div>
+
+                <div class="item-field">
+
+                    <label for="tents">
+                        No. of Tents:
+                    </label>
+
+                    <input type="number" id="tents" name="tents" min="0">
+
+                </div>
+
+            </div>
+
         </div>
 
-        <br>
+        <div class="form-section">
 
-        <div>
-        <label for="dateBorrowed">Date Borrowed: </label>
-        <input type="datetime-local" id="dateBorrowed" name="dateBorrowed" required>
+            <h3>Borrowing Period</h3>
+
+            <div class="date-grid">
+
+                <div>
+
+                    <label for="dateBorrowed">
+                        Date Borrowed: <span>*</span>
+                    </label>
+
+                    <input type="datetime-local" id="dateBorrowed" name="dateBorrowed" required>
+
+                </div>
+
+                <div>
+
+                    <label for="dateReturned">
+                        Date Returned: <span>*</span>
+                    </label>
+
+                    <input type="datetime-local" id="dateReturned" name="dateReturned" required>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <br>
+        <div class="form-section">
 
-        <div>
-        <label for="dateReturned">Date Returned: </label>
-        <input type="datetime-local" id="dateReturned" name="dateReturned" required>
+            <h3>Verification</h3>
+
+            <div class="verification">
+
+                <label for="validID">
+                    Valid ID Upload With Signature:
+                    <span>*</span>
+                </label>
+
+                <input type="file" id="validID" name="file" accept="image/*,.pdf" required>
+
+                <p class="form-text">
+                    Accepted formats: Image or PDF.
+                </p>
+
+            </div>
+
+            <div class="agreement">
+
+                <input type="checkbox" id="agree" name="agree" required>
+
+                <label for="agree">
+                    I agree that if anything happens to the borrowed items, it is my responsibility.
+                </label>
+
+            </div>
+
         </div>
 
-        <br>
+        <p class="required-text">
+            Fields marked with * are required.
+        </p>
 
-        <div> 
-            <input type="file" name="file"> VALID ID Upload With Signature(Required)
+        <div class="buttons">
+
+            <button type="submit" class="submit-btn">
+                Submit
+            </button>
+
+            <button type="reset" class="clear-btn">
+                Clear
+            </button>
+
         </div>
-
-        <br>
-
-        <div>
-            <input type="checkbox" id="agree" name="agree" required>
-            <label for="agree">
-                I agree that if anything happens to the borrowed items, it's my responsibility.
-            </label>
-        </div>
-
-        <br>
-
-        <input type="submit" value="Submit">
-        <input type="reset" value="Clear">
 
     </form>
 
